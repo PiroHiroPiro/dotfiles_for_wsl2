@@ -1,0 +1,24 @@
+# https://qiita.com/Hi-king/items/a8485557095692f1bf13
+## .gitignore ##
+# ignore all
+*
+
+# allow
+!.gitignore
+!README.md
+!install.sh
+
+!git/.config/git/common_template
+!git/.config/git/config
+!git/.config/git/ignore
+
+!tmux/.tmux.conf
+!tmux/.config/tmux/*.sh
+
+!vim/.vimrc
+!vim/dein.toml
+!vim/dein_lazy.toml
+
+!zsh/.zsh_aliases
+!zsh/.zshrc
+!zsh/.config/zsh/tmux.zsh

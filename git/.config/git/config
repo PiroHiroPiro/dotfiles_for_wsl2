@@ -1,0 +1,13 @@
+[user]
+  name = PiroHiroPiro
+  email = hirohiro11071107@gmail.com
+[core]
+  editor = vim
+[commit]
+	template = ~/.config/git/commit_template
+[alias]
+  ignore = !"f() { local s=$1; shift; \
+    while [ $# -gt 0 ]; do s=\"$s,$1\"; shift; done;\
+    curl \"https://www.toptal.com/developers/gitignore/api/$s\"; }; f"
+[pull]
+	rebase = false
