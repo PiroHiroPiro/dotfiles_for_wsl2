@@ -137,9 +137,9 @@ echo "##### download dotfiles #####"
 install_if_not_exist curl
 install_if_not_exist tar
 
-curl -sSL "https://github.com/PiroHiroPiro/dotfiles_for_wsl2/archive/master.tar.gz" | tar -zxv
+curl -sSL "https://github.com/PiroHiroPiro/dotfiles_for_wsl2/archive/main.tar.gz" | tar -zxv
 # 解凍したら，DOTPATH に置く
-mv -f dotfiles_for_wsl2-master $DOTPATH
+mv -f dotfiles_for_wsl2-main $DOTPATH
 
 cd "${DOTPATH}"
 
