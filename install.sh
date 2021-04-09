@@ -193,6 +193,10 @@ for file in ${LINK_FILES[@]}; do \
   echo "Linked: ${file}"; \
 done
 
+# Permission deniedでinstallに失敗するので、予めsudoで作成
+sudo chmod +x $DOTPATH/tmux/.config/tmux/ip.sh
+sudo chmod +x $DOTPATH/tmux/.config/tmux/load_average.sh
+
 # https://did2memo.net/2017/05/18/tmux-attach-no-sessions-error/
 export TMUX_TMPDIR=/tmp
 
