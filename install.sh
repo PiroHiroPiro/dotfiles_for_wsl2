@@ -168,6 +168,11 @@ if [ ! -d ~/.zplug ]; then
   done
 fi
 
+if [ ! -d /mnt/d/dev ]; then
+  echo "----- mkdir dev folder -----"
+  mkdir /mnt/d/dev
+fi
+
 echo "----- link zsh setting files -----"
 if [ ! -d ~/.config ]; then
   mkdir ~/.config
