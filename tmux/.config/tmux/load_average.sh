@@ -1,3 +1,3 @@
 #!/bin/bash -e
 
-uptime | awk '{print substr($10, 0, 4)}'
+uptime | cut -d " " -f 14 | sed -e 's/,//'
