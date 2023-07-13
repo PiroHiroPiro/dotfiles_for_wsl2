@@ -7,8 +7,8 @@ endif
 
 " Required:
 " Add the dein installation directory into runtimepath
-" ~/.config/deinで
-" sh installer.sh .
+" ~/install.shで
+" sh -c "$(curl -fsSL https://raw.githubusercontent.com/Shougo/dein-installer.vim/master/installer.sh)"
 " したと仮定
 let $DEIN_ROOT = "~/.config/dein/."
 let $DEIN_PATH= $DEIN_ROOT . "/repos/github.com/Shougo/dein.vim"

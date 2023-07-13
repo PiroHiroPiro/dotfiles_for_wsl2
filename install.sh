@@ -233,13 +233,6 @@ for file in ${LINK_FILES[@]}; do \
   echo "Linked: ${file}"; \
 done
 
-# Permission deniedでinstallに失敗するので、予めsudoで作成
-MAKE_DIRS=(. .cache repos/github.com)
-for dir in ${MAKE_DIRS[@]}; do \
-  sudo mkdir -p ~/.config/dein/$dir
-  sudo chmod -R 777 ~/.config/dein/$dir; \
-done
-
 echo "----- install dein.vim -----"
 if [ -d ~/.config/dein/repos/github.com/Shougo/dein.vim/ ]; then
   echo "dein.vim is already installed"
@@ -248,6 +241,13 @@ else
   echo ""
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/Shougo/dein-installer.vim/master/installer.sh)"
 fi
+
+# Permission deniedでinstallに失敗するので、予めsudoで作成
+MAKE_DIRS=(. .cache repos/github.com)
+for dir in ${MAKE_DIRS[@]}; do \
+  sudo mkdir -p ~/.config/dein/$dir
+  sudo chmod -R 777 ~/.config/dein/$dir; \
+done
 
 LINK_FILES=(.vimrc)
 for file in ${LINK_FILES[@]}; do \
