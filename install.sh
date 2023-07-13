@@ -157,7 +157,6 @@ install_if_not_exist zsh
 if [ ! -d ~/.zplug ]; then
   echo "----- install zplug -----"
   install_if_not_exist git
-  # git clone https://github.com/zplug/zplug ~/.zplug
   curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 
   # Permission deniedでinstallに失敗するので、予めsudoで作成
@@ -240,7 +239,7 @@ if [ -d ~/.config/dein/repos/github.com/Shougo/dein.vim/ ]; then
 else
   if [ ! -f ~/.config/dein/installer.sh ]; then
     echo "install dein installer.sh"
-    curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > ~/.config/dein/installer.sh
+    curl https://raw.githubusercontent.com/Shougo/dein-installer.vim/master/installer.sh > ~/.config/dein/installer.sh
   fi
   bash ~/.config/dein/installer.sh ~/.config/dein/ &>/dev/null
 fi
@@ -283,6 +282,8 @@ test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew
 test -r ~/.zshrc && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >> ~/.zshrc
 
 echo "----- install command using linuxbrew -----"
+brew install fzf
+brew install jq
 brew install exa
 brew install procs
 brew install fd
