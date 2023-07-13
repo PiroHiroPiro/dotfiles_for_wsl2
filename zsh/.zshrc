@@ -54,8 +54,6 @@ zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
 zplug "plugins/git", from:oh-my-zsh
-zplug "junegunn/fzf-bin", as:command, from:gh-r, rename-to:fzf
-zplug "stedolan/jq", from:gh-r, as:command, rename-to:"jq"
 zplug "b4b4r07/enhancd", use:init.sh
 zplug "b4b4r07/httpstat", as:command, use:"(*).sh", rename-to:"$1"
 zplug "supercrabtree/k"
