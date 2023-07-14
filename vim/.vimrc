@@ -170,7 +170,6 @@ set backspace=indent,eol,start
 " ファイル名補完
 set wildmenu
 set wildmode=full
-set rtp+=/home/linuxbrew/.linuxbrew/opt/fzf
 " マウス対応
 "set mouse=a
 "set ttymouse=xterm2

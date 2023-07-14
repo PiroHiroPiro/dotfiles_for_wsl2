@@ -238,22 +238,21 @@ if [ -d ~/.config/dein/repos/github.com/Shougo/dein.vim/ ]; then
   echo "dein.vim is already installed"
 else
   echo "install dein"
-  echo ""
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/Shougo/dein-installer.vim/master/installer.sh)"
 fi
+
+LINK_FILES=(.vimrc)
+for file in ${LINK_FILES[@]}; do \
+  rm -f ~/$file
+  ln -sf $DOTPATH/vim/$file ~/$file
+  echo "Linked: ${file}"; \
+done
 
 # Permission deniedでinstallに失敗するので、予めsudoで作成
 MAKE_DIRS=(. .cache repos/github.com)
 for dir in ${MAKE_DIRS[@]}; do \
   sudo mkdir -p ~/.config/dein/$dir
   sudo chmod -R 777 ~/.config/dein/$dir; \
-done
-
-LINK_FILES=(.vimrc)
-for file in ${LINK_FILES[@]}; do \
-  rm -f ~/$file&>/dev/null
-  ln -sf $DOTPATH/vim/$file ~/$file
-  echo "Linked: ${file}"; \
 done
 
 echo "##### finish to setup vim #####"
@@ -281,20 +280,24 @@ case "$(os)" in
 esac
 
 echo "----- install linuxbrew -----"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+(echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/hiroh/.zprofile(echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/hiroh/.zprofile
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 test -r ~/.zshrc && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >> ~/.zshrc
 
 echo "----- install command using linuxbrew -----"
-brew install fzf
-brew install jq
+brew install gcc
 brew install exa
 brew install procs
 brew install fd
 brew install ripgrep
 brew install gh
 brew install lazygit
+brew install fzf
+brew install jq
 
 echo "##### finish to setup linuxbrew #####"
 
