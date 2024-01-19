@@ -1,3 +1,3 @@
 #!/bin/bash -e
 
-uptime | cut -d " " -f 14 | sed -e 's/,//'
+uptime | rev | cut -d ':' -f 1 | rev | cut -d ',' -f 1
