@@ -176,7 +176,7 @@ echo "----- link zsh setting files -----"
 if [ ! -d ~/.config ]; then
   mkdir ~/.config
 fi
-LINK_FILES=(.zshrc .zsh_aliases .config/zsh)
+LINK_FILES=(.zshrc .zsh_aliases .config/zsh .config/spaceship-prompt)
 for file in ${LINK_FILES[@]}; do \
   unlink ~/$file&>/dev/null
   ln -sf $DOTPATH/zsh/$file ~/$file
@@ -290,7 +290,7 @@ test -r ~/.zshrc && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >> ~/.zsh
 
 echo "----- install command using linuxbrew -----"
 brew install gcc
-brew install exa
+brew install eza
 brew install procs
 brew install fd
 brew install ripgrep
