@@ -22,3 +22,4 @@
 !zsh/.zsh_aliases
 !zsh/.zshrc
 !zsh/.config/zsh/tmux.zsh
+!zsh/.config/spaceship-prompt/spaceship.zsh
